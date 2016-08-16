@@ -12,3 +12,7 @@
 .unordered-list{
 	font-size:.8em;
 }
+
+p:first-letter {
+	font-weight:bold;
+}
