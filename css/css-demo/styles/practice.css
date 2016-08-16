@@ -4,7 +4,7 @@
 
 .job{
 	background-color:#e9e5dc;
-	border-radius:400px 400px;
-	border-top-left-radius:200px;
-	border-bottom-left-radius:200px;
+	border-radius:350px 350px;
+	padding:30px;
+	margin:20px;
 }
