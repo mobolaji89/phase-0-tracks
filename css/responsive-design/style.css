@@ -49,3 +49,26 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+/*@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}*/
+
+/*Make text smaller past 494px*/
+@media screen and (max-width: 494px) {
+  h1, p, blockquote, a {
+    font-size: small;
+  }
+}
+
+/*Remove images past 300 px*/
+@media screen and (max-width: 300px) {
+  img {
+    display: none;
+  }
+}
+
+
+
