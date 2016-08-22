@@ -70,5 +70,10 @@ figcaption {
   }
 }
 
+@media screen {
+  html {
+    text-align: center;
+  }
+}
 
 
