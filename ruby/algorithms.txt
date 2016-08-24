@@ -1,0 +1,29 @@
+# Algorithm for using an elevator
+1. Enter the elevator.
+2. If elevator is full (capacity)
+	-Then do not enter
+3. Else
+	-Enter the elevator
+4. If going up the elevator
+	-Read floor numbers from current floor until top floor
+	-Press button for which floor to get off on (within the range read)
+5. Else if going down the else
+	-Read floor numbers from current floor and down
+	-Press button for which floor to get off on (within the range read)
+6. Exit elevator once destination floor has been reached.
+
+
+# Algorithm for brushing your teeth
+1. Pick up your toothbrush with your dominant hand (remove from holder).
+2. Pick up your toothpaste container with your opposite hand.
+3. If toothpaste container is empty
+	-Throw away the container in the trash
+	-Find another container or go to the store to buy a new one.
+4. Else if toothpaste container is not empty
+	-Squeeze toothpaste with opposite hand on toothbrush, while holding
+	bristles upright.
+5. Once, toothpaste is on toothbrush, take dominant hand and press bristles and
+toothpaste on teeth.
+6. Move dominant hand back and forth to cleen all teeth.
+7. Once all teeth are clean, rinse toothbrush under water, and put back in holder.
+8. Use cold water, or mouthwash in a cup to rinse teeth from excess fluoride.
