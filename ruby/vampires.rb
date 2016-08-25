@@ -1,3 +1,7 @@
+puts "How many employees will be processed?"
+employees = gets.chomp.to_i
+for i in 1..employees do
+
 puts "What is your name?"
 name = gets.chomp.to_s
 puts "How old are you?"
@@ -38,7 +42,7 @@ end
 
 if name == false && age == true && (garlic == true || health == true)
 	puts "Probably not a vampire."
-elsif name == false && (age == false && garlic == false && health == true) || name == false && (age == false && garlic == true && health == false)
+elsif (name == false && (age == false && garlic == false && health == true)) || (name == false && (age == false && garlic == true && health == false))
 	puts "Probably a vampire."
 elsif name == false && (age == false && garlic == false && health == false)
 	puts "Almost certainly a vampire."
@@ -46,4 +50,6 @@ elsif name == true && (age == true || age == false) && (garlic == true || garlic
 	puts "Definitely a vampire."
 else
 	puts "Results inconclusive."
+end
+
 end
