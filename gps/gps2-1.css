@@ -1,3 +1,42 @@
-h1 {
-	color: blue;
+header {
+  font-family: Arial, sans-serif;
+  background-color: blue;
+  margin-right: 5px;
+  padding:5px 10px 5px 10px;
 }
+
+.column-1 {
+  font-family: Helvetica, sans-serif;
+  background-color: yellow;
+  float:left;
+  width: 46%;
+  padding: 10px;
+  height: 1180px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: grey;
+
+}
+.column-2 {
+  font-family: Comic Sans MS, sans-serif;
+  background-color: purple;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 1180px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: grey;
+  margin-left: 1px;
+}
+
+footer {
+  font-family: Arial, sans-serif;
+  background-color: brown;
+  clear: both;
+  margin-right: 5px;
+  padding: 10px;
+}
+
+
+
