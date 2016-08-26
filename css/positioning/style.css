@@ -1,0 +1,25 @@
+/*img.align-center {
+  display: block;
+  margin: 0px auto;
+}*/
+
+/*html {
+	min-width: 1000px;
+}*/
+
+img.octopus {
+  display: block;
+  margin: 200px auto;
+}
+
+img.glasses {
+  position: relative;
+  top: -498px;
+  left: 605px;
+}
+
+img.hat {
+  position: relative;
+  top: -560px;
+  left: 405px;
+}
