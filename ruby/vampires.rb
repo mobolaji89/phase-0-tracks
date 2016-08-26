@@ -11,7 +11,7 @@ birth_year = gets.chomp.to_i
 puts "Our company cafeteria serves garlic bread. Should we order some for you? (Y / N)"
 garlic = gets.chomp.to_s
 puts "Would you like to enroll in the company's health insurance (Y / N)?"
-health =gets.chomp.to_s
+health = gets.chomp.to_s
 
 if name == "Drake Cula" || name == "Tu Fang"
 name = true
