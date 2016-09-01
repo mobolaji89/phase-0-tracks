@@ -1,4 +1,13 @@
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-#n =
+arr = [15, 11, 13, 20]
 
-def search_array (arr, n)
+def index_finder(arr, n)
+    index = 0
+    until index == arr.length
+        if n == arr[index]
+            return index
+        end
+    index += 1
+    end
+end
+
+p index_finder(arr, 20)
