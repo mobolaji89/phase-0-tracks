@@ -1,20 +1,47 @@
-#7 User Interface - create boolean, and utilize a loop
+### Pseudocode is written numerically for organization (steps: 1-17) ###
+
+#17) Extra: Warning message for user
+puts "WARNING: This program was created to take a real name and change it into a spy name by doing the following:" 
+puts "1. Swapping the first and last name."
+puts "2. Changing all of the vowels (a, e, i, o, or u) to the next vowel in 'aeiou', and all of the consonants (everything else besides the vowels) to the next consonant in the alphabet. So 'a' would become 'e', 'u' would become 'a', and 'd' would become 'f'."
+puts "This program was designed with the intention of changing TWO WORD name entries only."
+#Create extra space for clarity
+puts
+
+#7) User interface: create boolean variable for loop exit
 exit = false
+
+#9) Create empty data structure containing two arrays
+		list_names = {
+			original_name: [],
+			spy_name: []
+		}
+
+#8) Utilize a loop for entering multiple names		
 until exit == true do
 
 		#1) Get user input, convert to string, and split full name into two strings
 		puts "Please, enter your full name (Type, 'quit' when done):"
 		full_name = gets.chomp.to_s
+		#Create extra space for clarity
+		puts
+		
 	if full_name == "quit" || full_name == "Quit"
-		puts "THANK YOU!"
 		exit = true
+		
 	else
+		#10) Push original name entry into original_name array within data structure
+		list_names[:original_name].push(full_name)
+		
+		#11) Debug to see if full_name was push to original_name array
+		#p list_names[:original_name]
+		
+		#2) Split full name into two separate strings. Swap both first and last names in array using indexes. Update original array with new
 		name_array = full_name.split
 		
-		#2) swap both names in array using indexes. Update original array with new.
 		swap_array = (name_array[0], name_array[1] = name_array[1], name_array[0])
 		
-		#3) Use .join to return a string with the space, and then convert each character including the space back into an array by splitting. Update original array with new.
+		#3) Use .join to return a string with the space, and then convert each character including the space back into an array by splitting. Update original array with new
 		swap_array = swap_array.join(' ').split(//)
 		
 		#4)Debug to see if swap_array is updated
@@ -75,11 +102,34 @@ until exit == true do
 			swap_array.join(" ")
 		end
 		
-		p encrypt(next_vowel(swap_array))
+		#encrypt(next_vowel(swap_array))
 	
-	#Prompt user to enter an additional name
+	#12) Push encrypted spy name entry into spy_name array within data structure
+	list_names[:spy_name].push(encrypt(next_vowel(swap_array)))
+	
+	#13) Debug to see if encrypted swap_array was pushed to spy_name array
+	#p list_names[:spy_name]
+	
+	#14) Prompt user to enter an additional name
 	puts "ENTER AN ADDITIONAL NAME BELOW."
-		
+	
 	end
 	
 end
+
+#15) Debug to see if stored original and encryted values were pushed after user quits and loop ends 
+#p list_names[:original_name]
+#p list_names[:spy_name]
+
+#16) Iterate through the data structure using a loop, and print data for user
+puts "Here are your spy aliases:"
+
+index = 0
+while index < list_names[:original_name].length
+	puts "#{list_names[:original_name][index]} is also known as #{list_names[:spy_name][index]}."
+	index +=1
+end
+
+#Create extra space for clarity
+puts
+puts "THANK YOU!"
