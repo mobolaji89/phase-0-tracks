@@ -8,27 +8,63 @@ swap_array = (name_array[0], name_array[1] = name_array[1], name_array[0])
 
 #3) Use .join to return a string with the space, and then convert each character including the space back into an array by splitting. Update original array with new.
 swap_array = swap_array.join(' ').split(//)
-#4)Debug
-p swap_array
+
+#4)Debug to see if swap_array is updated
+#p swap_array
 
 #Next vowel method
 def next_vowel(swap_array)
 		swap_array.map! { |x| x
-			if x == "a"
+			if x == "a" || x == "A"
 				x = "e"
-			elsif x == "e"
+			elsif x == "e" || x == "E"
 				x = "i"
-			elsif x == "i"
+			elsif x == "i" || x == "I"
 				x = "o"
-			elsif x == "o"
+			elsif x == "o" || x == "O"
 				x = "u"
-			elsif x == "u"
+			elsif x == "u" || x == "U"
 				x = "a"
 			else
 				x
 			end
 		}
+	return swap_array
 end
 
-#Debug
-p next_vowel(swap_array)
+#5)Debug next_vowel method
+#p next_vowel(swap_array)
+
+#6)Create encrypt function for consonants
+def encrypt (swap_array)
+	swap_array.map! { |x| x
+	if x == "a" || x == "e" || x == "i" || x == "o" || x == "u"
+		x
+	elsif
+		x =="d" || x == "D"
+		x = "f"
+	elsif
+		x == "z" || x == "Z"
+		x = "b"
+	elsif
+		x == "h" || x == "H"
+		x = "j"
+	elsif x == "n" || x == "N"
+		x = "p"
+	elsif x == "t" || x == "T"
+		x = "v"
+	elsif x == " "
+		x = " "
+	else
+		x = x.next
+	end	
+	}
+
+#7)	Capitalize first and last name 
+	swap_array = swap_array.join.split
+	swap_array[0].capitalize!
+	swap_array[1].capitalize!
+	swap_array.join(" ")
+end
+
+p encrypt(next_vowel(swap_array))
