@@ -8,7 +8,12 @@
 #
 require_relative 'state_data'
 
+## accesses relevent file within same directory
+
 class VirusPredictor
+
+  ## initialize let's us know when a new instance starts. 
+  ##The initialize method takes attributes that give characteristics to our class.
 
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
@@ -16,14 +21,17 @@ class VirusPredictor
     @population_density = population_density
   end
 
+
+  ## gives us access to private methods below
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
+  ## keyword for hiding or protecting methods below
   private
 
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +49,7 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -69,7 +77,7 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-
+=begin
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
 
@@ -81,7 +89,13 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+=end
 
+
+STATE_DATA.each_key do |key|
+state = VirusPredictor.new(key, STATE_DATA[key][:population_density], STATE_DATA[key][:population])
+state.virus_effects
+end
 
 #=======================================================================
 # Reflection Section
