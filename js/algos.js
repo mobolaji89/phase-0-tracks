@@ -34,7 +34,28 @@ return arr[0];
 //ELSE return false
 //print result
 
+var pairs_1 = {name: "Steven", age: 54}
+var pairs_2 = {name: "Tamir", age: 54}
+var pairs_3 = {name: "Alex", age: 55}
 
+
+function find_match(obj_1,obj_2) {
+  for (var key in obj_1) {
+	for (var key in obj_2) {
+	  if (obj_1[key] == obj_2[key]) {
+		return true
+	  } else {
+		return false
+	  }
+	}
+  }
+}
+
+//calling release 1
+  //returns true
+  console.log(find_match(pairs_1,pairs_2))
+  //returns false
+  //console.log(find_match(pairs_1,pairs_3))
 
 //calling release 0
 console.log(longest_string(word_arr))
