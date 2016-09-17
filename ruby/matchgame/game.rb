@@ -96,4 +96,3 @@ end
 
 #extra puts is for additional line space
 if game.guess_max == 0 then puts puts "Game Over!" end
-	
