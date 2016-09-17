@@ -9,3 +9,17 @@
 var word_arr = ["abc", "a", "abcd", "abcde", "ab"];
 //console.log(arr);
 
+function longest_string(arr) {
+  for (var n=0; n < arr.length; n++) {
+    for(var i=0; i < arr.length; i++) {
+	  if (arr[i] < arr[i+1]) {
+		var x = arr[i+1];
+		arr[i+1] = arr[i];
+		arr[i] = x;
+	  }
+	}
+  }
+return arr[0];
+}
+
+console.log(longest_string(word_arr))
