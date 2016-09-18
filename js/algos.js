@@ -7,20 +7,21 @@
   //move the largest string to one end of the array
   //print that string by accessing the index value
 
-var word_arr = ["abc", "a", "abcd", "abcde", "ab"];
+var word_arr = ["dog", "i", "that", "happy", "be"];
 //console.log(arr);
 
 function longest_string(arr) {
-  for (var n=0; n < arr.length; n++) {
+  //for (var n=0; n < arr.length; n++) {
     for(var i=0; i < arr.length; i++) {
-	  if (arr[i] < arr[i+1]) {
+	  if (arr[i].length < arr[i+1].length) {
 		var x = arr[i+1];
 		arr[i+1] = arr[i];
 		arr[i] = x;
 	  }
 	}
-  }
-return arr[0];
+  //}
+//return arr[0];
+return arr
 }
 
 //release1
@@ -62,6 +63,15 @@ function find_match(obj_1,obj_2) {
     //use a function in Javascript to generate a word
 	//push that random word to the array
   //when loop is print the updated arr
+  
+/*function(int) {
+  var ran_arr = [];
+  i = 0
+  while (i < int) {
+    	
+  i++
+  } 
+}*/
   
 
 //calling release 1
