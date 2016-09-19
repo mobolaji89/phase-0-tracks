@@ -49,8 +49,10 @@ function find_match(obj_1,obj_2) {
   for (var key in obj_1) {
 	for (key in obj_2) {
 	  if (obj_1[key] == obj_2[key]) {
+		// debug - console.log(obj_1[key])
 		return true;
 	  } else {
+		// debug - console.log(obj_2[key])
 		return false;
 	  }
 	}
@@ -62,26 +64,46 @@ function find_match(obj_1,obj_2) {
 
   //create a function that takes an integer for an argument
   //create an empty array
+  //crate an empty string variable to set equal to after the word is generated
   //create a loop so we can loop the number of (arg) times
-    //use a function in Javascript to generate a word
-	//push that random word to the array
-  //when loop is print the updated arr
+    //use a function 'MathRandom'in Javascript to generate a random number value
+	//use a function 'toString' to convert that random number to a string
+	//use a function to replace each generated integer character with a letter in the alphabet in the string '.replace'
+	//use a function that can return length of string up to 10 characters
+  //push value to an array each time
+  //add driver code
+    //create loop to loop 10 times
+	  //set new array variable equal return function value
+	  //print that variable
+	  //call longest_string function on that variable and print
+	
   
-/*function(int) {
+function random_arr(int) {
   var ran_arr = [];
-  i = 0
-  while (i < int) {
-    	
-  i++
-  } 
-}*/
-  
+  var text = "";
+  for(var i=0; i < int; i++) {
+    text = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(12);
+    ran_arr.push(text);
+  }
+  return ran_arr;
+}
+
+
+//calling release 0
+console.log(longest_string(word_arr))
 
 //calling release 1
   //returns true
   console.log(find_match(pairs_1,pairs_2))
   //returns false
   console.log(find_match(pairs_1,pairs_3))
-
-//calling release 0
-console.log(longest_string(word_arr))
+  
+//calling release 2
+  for (i = 0; i < 10; i++) { 
+    var new_arr = random_arr(3);
+    console.log(new_arr);
+    console.log(longest_string(new_arr));
+ }
+ 
+ //This repl seems to work: https://repl.it/Dc4L/2
+ //However, issues with same results in node
