@@ -2,27 +2,30 @@
   //Write a function that takes an array of words or phrases and returns the longest word or phrase in the array
 
   //define a function and pass it an array as an argument
-  //iterate through each index in the array (in the example we have strings)
-  //sort through each index, by swapping indexes based on string length
-  //move the largest string to one end of the array
-  //print that string by accessing the index value
+  //create two variables
+    //one starting variable equal to 0 for the initial length
+	//another variable for longest string
+  //iterate through each index in the array (in the example we have strings) using a loop.
+	//IF the string is greater than the initial length then update that length value
+	//as the iteration continues the longest value will be the index that has the longest updated length under the conditonal statement
+  //return longest value
 
 var word_arr = ["dog", "i", "that", "happy", "be"];
 //console.log(arr);
 
+
 function longest_string(arr) {
-  //for (var n=0; n < arr.length; n++) {
-    for(var i=0; i < arr.length; i++) {
-	  if (arr[i].length < arr[i+1].length) {
-		var x = arr[i+1];
-		arr[i+1] = arr[i];
-		arr[i] = x;
-	  }
-	}
-  //}
-//return arr[0];
-return arr
+  var len = 0;
+  var longest;
+  for(var i=0; i < arr.length; i++) {
+    if(arr[i].length > len) {
+      var len = arr[i].length;
+      longest = arr[i];
+    }	
+  }
+return longest
 }
+
 
 //release1
   //Write a function that takes two objects and checks to see if the objects share at least one key-value pair.
