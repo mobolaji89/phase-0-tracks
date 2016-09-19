@@ -44,8 +44,8 @@ var pairs_1 = {name: "Steven", age: 54}
 var pairs_2 = {name: "Tamir", age: 54}
 var pairs_3 = {name: "Alex", age: 55}
 
-
-function find_match(obj_1,obj_2) {
+//Original prior to talking to Glenna
+/*function find_match(obj_1,obj_2) {
   for (var key in obj_1) {
 	for (key in obj_2) {
 	  if (obj_1[key] == obj_2[key]) {
@@ -57,7 +57,24 @@ function find_match(obj_1,obj_2) {
 	  }
 	}
   }
+}*/
+
+//Updated version - not sure if this is the more efficient way using two for loops
+
+function find_match(obj_1,obj_2) {
+  for (var key in obj_1) {
+      if (obj_1[key] == obj_2[key]) {
+        return true;
+      }
+  }
+  for (var key in obj_1) {
+      if (obj_1[key] != obj_2[key]) {
+        return false;
+      }
+  }
 }
+
+
 
 //release 2
   //Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
@@ -77,7 +94,7 @@ function find_match(obj_1,obj_2) {
 	  //print that variable
 	  //call longest_string function on that variable and print
 	
-  
+	
 function random_arr(int) {
   var ran_arr = [];
   var text = "";
@@ -87,6 +104,9 @@ function random_arr(int) {
   }
   return ran_arr;
 }
+
+ //This repl seems to work: https://repl.it/Dc4L/2
+ //However, issues with same results in node
 
 
 //calling release 0
@@ -104,6 +124,3 @@ console.log(longest_string(word_arr))
     console.log(new_arr);
     console.log(longest_string(new_arr));
  }
- 
- //This repl seems to work: https://repl.it/Dc4L/2
- //However, issues with same results in node
