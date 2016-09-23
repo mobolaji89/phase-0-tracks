@@ -1,3 +1,5 @@
+#NOTE: I LOOKED OVER THIS ASSIGNMENT FOR THE WEEK 5 REPEAT WITH CHIPMUNK COHORT
+
 # Replace in the "<???>" with the appropriate method (and arguments, if any).
 # Uncomment the calls to catch these methods red-handed.
 
