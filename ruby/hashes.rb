@@ -2,7 +2,10 @@
 #puts each question for the user
   #after each question, get user input and store the appropriate key in the array, with the value(user-input)
  #for boolean question, use a if conditional statement, and set the value to true IF Yes, ELSE set value to false IF No, ELSE set value to unknown if neither.
-#
+#Update value of temp key if user makes an error.
+  #IF value is unknown
+  #puts update question
+  #get user input for updated value and reassign to the appropriate key
 
 
 app = {}
