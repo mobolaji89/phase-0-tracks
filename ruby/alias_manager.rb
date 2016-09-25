@@ -25,17 +25,16 @@ puts "WARNING: This program was created to take a real name and change it into a
 puts "1. Swapping the first and last name."
 puts "2. Changing all of the vowels (a, e, i, o, or u) to the next vowel in 'aeiou', and all of the consonants (everything else besides the vowels) to the next consonant in the alphabet. So 'a' would become 'e', 'u' would become 'a', and 'd' would become 'f'."
 puts "This program was designed with the intention of changing TWO WORD name entries only."
-#Create extra space for clarity
-puts
+puts #extra space for clarity
 
 list_names = {
-			original_name: [],
-			spy_name: []
-		}
+  original_name: [],
+  spy_name: []
+}
 
 exit = false
 	
-until exit == true do
+loop do
 		puts "Please, enter your full name (Type, 'quit' when done):"
 		full_name = gets.chomp.to_s
 		#Create extra space for clarity
@@ -123,7 +122,7 @@ until exit == true do
 	puts "ENTER AN ADDITIONAL NAME BELOW."
 	
 	end
-	
+  break if exit == true
 end
 
 #debug to see if stored original and encryted values were pushed after user quits and loop ends 
