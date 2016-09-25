@@ -35,81 +35,65 @@ list_names = {
 exit = false
 	
 loop do
-		puts "Please, enter your full name (Type, 'quit' when done):"
-		full_name = gets.chomp.to_s
-		#Create extra space for clarity
-		puts
-		
-	if full_name == "quit" || full_name == "Quit"
-		exit = true
-		
+  puts "Please, enter your full name (Type, 'quit' when done):"
+  full_name = gets.chomp.to_s.downcase
+  puts #extra space for clarity
+	if full_name == "quit"
+	  exit = true
 	else
-		list_names[:original_name].push(full_name)
-		
-		#debug to see if full_name was push to original_name array
+	  list_names[:original_name].push(full_name)
+	  #debug to see if full_name was push to original_name array
 		#p list_names[:original_name]
-		
-		name_array = full_name.split
-		
-		swap_array = (name_array[0], name_array[1] = name_array[1], name_array[0])
-		
-		swap_array = swap_array.join(' ').split(//)
-		
-		#debug to see if swap_array is updated
+	  name_array = full_name.split
+	  swap_array = (name_array[0], name_array[1] = name_array[1], name_array[0])
+	  swap_array = swap_array.join(' ').split(//)
+	  #debug to see if swap_array is updated
 		#p swap_array
-		
-		#Next vowel method
-		def next_vowel(swap_array)
-				swap_array.map! { |x| x
-					if x == "a" || x == "A"
-						x = "e"
-					elsif x == "e" || x == "E"
-						x = "i"
-					elsif x == "i" || x == "I"
-						x = "o"
-					elsif x == "o" || x == "O"
-						x = "u"
-					elsif x == "u" || x == "U"
-						x = "a"
-					else
-						x
-					end
-				}
-			return swap_array
-		end
-		
-		#debug next_vowel method
+	  def next_vowel(swap_array)
+		swap_array.map! do |x|
+		  if x == "a"
+		    x = "e"
+		  elsif x == "e"
+		    x = "i"
+		  elsif x == "i"
+		    x = "o"
+		  elsif x == "o"
+		    x = "u"
+		  elsif x == "u"
+		    x = "a"
+		  else
+		    x
+		  end
+	    end
+		return swap_array
+	  end
+	  #debug next_vowel method
 		#p next_vowel(swap_array)
-		
-		def encrypt (swap_array)
-			swap_array.map! { |x| x
-			if x == "a" || x == "e" || x == "i" || x == "o" || x == "u"
-				x
-			elsif
-				x =="d" || x == "D"
-				x = "f"
-			elsif
-				x == "z" || x == "Z"
-				x = "b"
-			elsif
-				x == "h" || x == "H"
-				x = "j"
-			elsif x == "n" || x == "N"
-				x = "p"
-			elsif x == "t" || x == "T"
-				x = "v"
-			elsif x == " "
-				x = " "
-			else
-				x = x.next
-			end	
-			}
-		
-			swap_array = swap_array.join.split
-			swap_array[0].capitalize!
-			swap_array[1].capitalize!
-			swap_array.join(" ")
+	  def encrypt (swap_array)
+		swap_array.map! do |x|
+		  if x == "a" || x == "e" || x == "i" || x == "o" || x == "u"
+		    x
+		  elsif x =="d"
+		    x = "f"
+		  elsif x == "z"
+		    x = "b"
+		  elsif x == "h"
+		    x = "j"
+		  elsif x == "n"
+		    x = "p"
+		  elsif x == "t"
+		    x = "v"
+	      elsif x == " "
+		    x = " "
+		  else
+		    x = x.next
+		  end	
 		end
+		swap_array = swap_array.join.split
+		swap_array[0].capitalize!
+		swap_array[1].capitalize!
+		swap_array.join(" ")
+	  end
 		
         #encrypt function test code
 		  #encrypt(next_vowel(swap_array))
