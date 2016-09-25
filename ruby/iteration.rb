@@ -5,17 +5,28 @@ fruits = ['apple', 'banana', 'orange', 'pear', 'pineapple']
 
 #iterate through the array using .each
 #print each value inside the array
+
+#unmodified array
+p fruits
+
 fruits.each do |i|
-  puts i
+  puts i + '?'
 end
+
+#.each does not modify the original array
+p fruits
 
 #iterate through the array using .map
   #bang operater used to change the array with the updated values
 #print the updated array
+
+#unmodified array
+p fruits
+
 fruits.map! do |i|
   i + '!'
 end
-
+#modified array
 p fruits
   
 
