@@ -50,7 +50,7 @@ numbers = [1,2,3,4,5,6,7,8,9,10]
 #delete numbers in array less than 5, and print
 p numbers.delete_if {|i| i < 5}
 
-#keep numbers in a array less than 5, and print
+#keep numbers in an array less than 5, and print
 p numbers.keep_if {|i| i < 5}
 
 #filter even numbers, and print
@@ -59,17 +59,25 @@ p numbers.select {|num| num.even?}
 #remove(drop) items until false
 p numbers.drop_while  {|i| i < 5}
 
-
 #new hash
 num_hash = {
-  "1" => "one",
-  "2" => "two",
-  "3" => "three",
-  "4" => "four",
-  "5" => "five"
+   :a => 1,
+   :b => 2,
+   :c => 3,
+   :d => 4,
+   :e => 5
 }
 
+#delete key value pair if value in hash less than 3
+p num_hash.delete_if {|key, value| value < 3}
 
+#keep key value pairs that are less than 3}
+p num_hash.keep_if {|key, value| value < 3}
+
+#filter key value pairs with even values
+p num_hash.select {|key, value|  value.even?}
+
+#no drop method for hash
 
 
 
