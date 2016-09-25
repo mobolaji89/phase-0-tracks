@@ -3,6 +3,22 @@
 #create array
 fruits = ['apple', 'banana', 'orange', 'pear', 'pineapple']
 
+#iterate through the array using .each
+#print each value inside the array
+fruits.each do |i|
+  puts i
+end
+
+#iterate through the array using .map
+  #bang operater used to change the array with the updated values
+#print the updated array
+fruits.map! do |i|
+  i + '!'
+end
+
+p fruits
+  
+
 #create hash
 favorite_fruit = {
   :bob => 'apple',
@@ -11,6 +27,11 @@ favorite_fruit = {
   :sarah => 'pear',
   :susan => 'pineapple'
 }
+
+#iterate through the hash
+favorite_fruit.each do |key, value|
+  puts "#{key.to_s.capitalize} wants the #{value}!"
+end
 
 
 =begin
