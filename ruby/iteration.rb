@@ -1,3 +1,21 @@
+#5.3 repeat - Chipmunks 2016
+
+#create array
+fruits = ['apple', 'banana', 'orange', 'pear', 'pineapple']
+
+#create hash
+favorite_fruit = {
+  :bob => 'apple',
+  :billy => 'banana',
+  :tommy => 'orange',
+  :sarah => 'pear',
+  :susan => 'pineapple'
+}
+
+
+=begin
+#original 5.3 below - Coyotes 2016
+
 def favorite_food
   puts "I like to eat pizza!"
   yield("sushi","potatoes")
@@ -58,3 +76,4 @@ p num_hash
 p even_hash
 even_hash = num_hash.select { |digit, string| digit.to_i.even? }
 p even_hash
+=end
