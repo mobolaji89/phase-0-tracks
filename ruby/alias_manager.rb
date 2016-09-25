@@ -27,24 +27,21 @@ puts "2. Changing all of the vowels (a, e, i, o, or u) to the next vowel in 'aei
 puts "This program was designed with the intention of changing TWO WORD name entries only."
 puts #extra space for clarity
 
-list_names = {
-  original_name: [],
-  spy_name: []
-}
+list_names = {}
 
 exit = false
 	
 loop do
   puts "Please, enter your full name (Type, 'quit' when done):"
-  full_name = gets.chomp.to_s.downcase
+  full_name = gets.chomp.to_s
   puts #extra space for clarity
 	if full_name == "quit"
 	  exit = true
 	else
-	  list_names[:original_name].push(full_name)
-	  #debug to see if full_name was push to original_name array
-		#p list_names[:original_name]
-	  name_array = full_name.split
+	  list_names[full_name] = nil
+	  #debug to see if full_name was stored in hash
+		#p list_names
+	  name_array = full_name.downcase.split
 	  swap_array = (name_array[0], name_array[1] = name_array[1], name_array[0])
 	  swap_array = swap_array.join(' ').split(//)
 	  #debug to see if swap_array is updated
@@ -94,40 +91,27 @@ loop do
 		swap_array[1].capitalize!
 		swap_array.join(" ")
 	  end
-		
-        #encrypt function test code
-		  #encrypt(next_vowel(swap_array))
-	
-	list_names[:spy_name].push(encrypt(next_vowel(swap_array)))
-	
-	#debug to see if encrypted swap_array was pushed to spy_name array
-	  #p list_names[:spy_name]
-	
-	puts "ENTER AN ADDITIONAL NAME BELOW."
-	
+	  #encrypt function test code
+		#p encrypt(next_vowel(swap_array))
+	list_names[full_name] = encrypt(next_vowel(swap_array))
+	#debug to see if encrypted swap_array was set to updated value in hash
+	  #p list_names
+	puts "ENTER AN ADDITIONAL NAME BELOW:"
 	end
-  break if exit == true
+  break if exit == true #end loop
 end
 
-#debug to see if stored original and encryted values were pushed after user quits and loop ends 
-  #p list_names[:original_name]
-  #p list_names[:spy_name]
+#debug to see if all key value pairs were stored after user quits and loop ends
+  #p list_names
 
 puts "Here are your spy aliases:"
-
-index = 0
-while index < list_names[:original_name].length
-	puts "#{list_names[:original_name][index]} is also known as #{list_names[:spy_name][index]}."
-	index +=1
+list_names.each do |key, value|
+  puts "#{key} is also known as #{value}."
 end
-
-#Create extra space for clarity
-puts
+puts #extra space for clarity
 puts "THANK YOU!"
 
-
 #original below - Coyotes 2016
-
 =begin
 ### Pseudocode is written numerically for organization (steps: 1-17) ###
 
