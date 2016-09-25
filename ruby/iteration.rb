@@ -44,6 +44,35 @@ favorite_fruit.each do |key, value|
   puts "#{key.to_s.capitalize} wants the #{value}!"
 end
 
+#new array
+numbers = [1,2,3,4,5,6,7,8,9,10]
+
+#delete numbers in array less than 5, and print
+p numbers.delete_if {|i| i < 5}
+
+#keep numbers in a array less than 5, and print
+p numbers.keep_if {|i| i < 5}
+
+#filter even numbers, and print
+p numbers.select {|num| num.even?}
+
+#remove(drop) items until false
+p numbers.drop_while  {|i| i < 5}
+
+
+#new hash
+num_hash = {
+  "1" => "one",
+  "2" => "two",
+  "3" => "three",
+  "4" => "four",
+  "5" => "five"
+}
+
+
+
+
+
 
 =begin
 #original 5.3 below - Coyotes 2016
