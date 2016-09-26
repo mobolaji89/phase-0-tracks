@@ -1,14 +1,16 @@
+#edited and reviewed for week 5 repeat - Chipmunks 2016
+
 ##Release 0##
 arr = [15, 11, 13, 20]
 
 def index_finder(arr, n)
-    index = 0
-    until index == arr.length
-        if n == arr[index]
-            return index
-        end
-    index += 1
+  index = 0
+  until index == arr.length
+    if n == arr[index]
+      return index
     end
+  index += 1
+  end
 end
 
 p index_finder(arr, 20)
@@ -16,12 +18,12 @@ p index_finder(arr, 20)
 ##Release 1##
 def fibonacci(n)
 fib_array = [0,1]
- 	index = 2 
- 	until index == n 
- 		fib_array.push(fib_array[index-1] + fib_array[index-2])
- 		index += 1 
- 	end 
- 	return fib_array
+  index = 2 
+  until index == n 
+ 	fib_array.push(fib_array[index-1] + fib_array[index-2])
+  index += 1 
+  end 
+  return fib_array
 end 
 
 p fibonacci(10)
@@ -42,19 +44,19 @@ p fibonacci(10)
 
 array = [15, 100, 39, 45, 21]
 
-def bubble_sort(array)
-	n = array.length
-	loop do
-    	swapped = false
-		(n-1).times do |i|
-            if array[i] > array[i+1]
-                array[i], array[i+1] = array[i+1], array[i]
-                swapped = true
-            end
-        end
-	break if not swapped
-	end
-	return array
+def bubble_sort(arr)
+  n = arr.length
+  loop do
+    swapped = false
+	(n-1).times do |i|
+      if arr[i] > arr[i+1]
+        arr[i], arr[i+1] = arr[i+1], arr[i]
+        swapped = true
+      end
+    end
+  break if not swapped
+  end
+  return arr
 end
 
 p bubble_sort(array)
