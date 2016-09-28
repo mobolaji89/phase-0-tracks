@@ -1,3 +1,54 @@
+#week 6 repeat - Chipmunks 2016
+
+class TodoList
+  def initialize(array)
+    @array = array
+  end
+  
+  def get_items
+    @array
+  end
+  
+  def add_item(item)
+    @array << item
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Coyotes 2016
+=begin
 class TodoList
     def initialize(items)
     @items = items
@@ -20,3 +71,4 @@ class TodoList
         @items[index]
     end
 end
+=end
