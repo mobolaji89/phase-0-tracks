@@ -58,7 +58,6 @@ def remove_item (list, item)
   list
 end
 
-
 # Method to update the quantity of an item
 def update_quantity(list, item, quantity)
   list[item] = quantity
@@ -67,23 +66,34 @@ end
 # Method to print a list and make it look pretty
 def print_list(list)
   list.each do |key, value|
-    puts "#{key}, #{value}"
+    puts "#{key.capitalize}, #{value}"
   end
 end
 
 
-#p create_list(str)
+#create list
 test_list = create_list("")
+=begin
+p add_item(test_list, "lemonade", 2)
+p add_item(test_list, "tomatoes", 3)
+p add_item(test_list, "onions", 1)
+p add_item(test_list, "ice cream", 4)
+=end
+#create an array for each item and each item's quantity
+test_items = ["lemonade", "tomatoes", "onions", "ice cream"]
+test_quantities =[2, 3, 1, 4]
+#adding items to empty hash (test_list)
+index = 0
+while index < test_items.length do
+  add_item(test_list, test_items[index], test_quantities[index])
+  index += 1
+end
 
-p add_item(test_list, "Lemonade", 2)
-p add_item(test_list, "Tomatoes", 3)
-p add_item(test_list, "Onions", 1)
-p add_item(test_list, "Ice Cream", 4)
-
-p remove_item(test_list, "Lemonade")
-
-p update_quantity(test_list, "Ice Cream", 1)
-
+#remove lemonade from list
+remove_item(test_list, "lemonade")
+#update quantity of ice cream to 1
+update_quantity(test_list, "ice cream", 1)
+#print out your list
 print_list(test_list)
 
 
