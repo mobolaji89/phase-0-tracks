@@ -1,3 +1,175 @@
+#gps 2.2
+#Pseudocode
+
+# Method to create a list
+# input: string of items separated by spaces (example: "carrots apples cereal pizza")
+# steps:
+  # Split string on " " = array
+  # create a hash
+  # set default quantity = 1
+  # iterate through array of items
+  # for each item add to hash
+  # print the list to the console (print_list method)
+# output: Hash. Key = Item, value = quantity (int)
+
+# Method to add an item to a list
+# input: item list, item name and optional quantity
+# steps: add item to list with key = item name and quantity = quantity parameter if present, otherwise default
+# output: hash with new item added
+
+# Method to remove an item from the list
+# input: item list, item name (key)
+# steps: iterate through item list hash and remove items with keys matching input item key
+# output: hash with item removed
+
+# Method to update the quantity of an item
+# input: item list, item, new quantity
+# steps: update input key with input new value
+# output: updated item list hash
+
+# Method to print a list and make it look pretty
+# input: item list
+# steps: iterate through hash and print each key and value separated by ':', one pair per line
+# output: nil
+
+str = "carrots apples cereal pizza"
+
+
+# Method to create a list
+def create_list (list)
+  arr = list.split(' ')
+  grocery_list = Hash.new
+  
+  arr.each do |key|
+    grocery_list[key] = 1
+  end
+  grocery_list
+end
+
+# Method to add an item to a list
+def add_item (list, item, quantity = 1)
+  list[item] = quantity
+  list
+end
+
+# Method to remove an item from the list
+def remove_item (list, item)
+  list.delete(item)
+  list
+end
+
+
+# Method to update the quantity of an item
+def update_quantity(list, item, quantity)
+  list[item] = quantity
+  list
+end
+# Method to print a list and make it look pretty
+def print_list(list)
+  list.each do |key, value|
+    puts "#{key}, #{value}"
+  end
+end
+
+
+p create_list(str)
+test_list = create_list(str)
+
+p add_item(test_list, "milk", 3)
+p add_item(test_list, "banana")
+
+p remove_item(test_list, "banana")
+
+p update_quantity(test_list, "apples", 3)
+
+print_list(test_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=begin
+#Coyotes 2016
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
@@ -96,3 +268,4 @@ loop do
   end
 end
 print_list(u_list)
+=end
