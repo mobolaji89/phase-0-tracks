@@ -32,7 +32,7 @@
 # steps: iterate through hash and print each key and value separated by ':', one pair per line
 # output: nil
 
-str = "carrots apples cereal pizza"
+#str = "carrots apples cereal pizza"
 
 
 # Method to create a list
@@ -72,15 +72,17 @@ def print_list(list)
 end
 
 
-p create_list(str)
-test_list = create_list(str)
+#p create_list(str)
+test_list = create_list("")
 
-p add_item(test_list, "milk", 3)
-p add_item(test_list, "banana")
+p add_item(test_list, "Lemonade", 2)
+p add_item(test_list, "Tomatoes", 3)
+p add_item(test_list, "Onions", 1)
+p add_item(test_list, "Ice Cream", 4)
 
-p remove_item(test_list, "banana")
+p remove_item(test_list, "Lemonade")
 
-p update_quantity(test_list, "apples", 3)
+p update_quantity(test_list, "Ice Cream", 1)
 
 print_list(test_list)
 
