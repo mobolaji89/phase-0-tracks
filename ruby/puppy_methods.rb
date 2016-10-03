@@ -32,6 +32,34 @@ puppy.speak(3)
 puppy.roll_over
 puppy.jump(10)
 
+#Release 2
+
+class Train
+  def initialize
+    puts "Initializing new train instance..."
+  end
+  
+  def start_engine
+    puts "*choo choo*"
+  end
+  
+  def travel(num)
+    puts "*traveling #{num} miles*"
+    num
+  end
+end
+
+trains = []
+
+50.times do
+  train = Train.new
+  trains << train
+end
+
+trains.each do |i|
+  i.start_engine
+  i.travel(rand(100)) #for random number of miles
+end
 
 #Coyotes 2016
 =begin
