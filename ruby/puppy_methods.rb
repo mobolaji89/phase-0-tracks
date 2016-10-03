@@ -1,4 +1,4 @@
-#6.2 repeat - Coyotes 2016
+#6.2 repeat - Chipmunks 2016
 class Puppy
   def initialize
   	puts "Initializing new puppy instance..."
