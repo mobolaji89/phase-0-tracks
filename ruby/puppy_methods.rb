@@ -1,3 +1,68 @@
+#6.2 repeat - Coyotes 2016
+class Puppy
+  def initialize
+  	puts "Initializing new puppy instance..."
+  end 		
+
+  def fetch(toy)
+    puts "I brought back the #{toy}!"
+    toy 
+  end
+  
+  def speak(num)
+  	num.times do 
+  	  puts "Woof!"
+  	  end
+    num
+  	end
+    
+  def roll_over 
+  	puts "*rolls over*"
+  end
+  
+  def jump(num)
+    puts "*jumps #{num} inches from the ground*"
+    num
+  end
+end
+
+puppy = Puppy.new
+puppy.fetch('stick')
+puppy.speak(3)
+puppy.roll_over
+puppy.jump(10)
+
+#Release 2
+
+class Train
+  def initialize
+    puts "Initializing new train instance..."
+  end
+  
+  def start_engine
+    puts "*choo choo*"
+  end
+  
+  def travel(num)
+    puts "*traveling #{num} miles*"
+    num
+  end
+end
+
+trains = []
+
+50.times do
+  train = Train.new
+  trains << train
+end
+
+trains.each do |i|
+  i.start_engine
+  i.travel(rand(100)) #for random number of miles
+end
+
+#Coyotes 2016
+=begin
 class Puppy
 
   def initialize
@@ -83,8 +148,7 @@ end
 shake.each do |key, value| 
 	puts "#{value}"
 end 
-
-
+=end
 
 
 
