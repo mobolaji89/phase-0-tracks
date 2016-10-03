@@ -1,7 +1,7 @@
 #6.2 repeat - Coyotes 2016
 class Puppy
   def initialize
-  	puts "initialize new puppy instance!"
+  	puts "Initializing new puppy instance..."
   end 		
 
   def fetch(toy)
