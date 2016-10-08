@@ -8,22 +8,23 @@
 #
 #
 require_relative 'state_data'
+#it accesses different variable type within another file in the same local directory.
 
 class VirusPredictor
-
+  #giving our instances attributes that will be passed in when created
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+  #accessing the private methods within the class, and calling them together within a method
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
-
+  #calculates the number of predicted deaths per state based on a condition
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,7 +42,7 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
+  #calculates speed virus will affect the entire state within a period of time
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
