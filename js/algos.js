@@ -78,16 +78,15 @@ function find_match(obj_1,obj_2) {
 
 //release 2
   //Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
-
   //create a function that takes an integer for an argument
-  //create an empty array
-  //crate an empty string variable to set equal to after the word is generated
+    //create an empty array
+	//create a string composed of letters in the alphabet
+    //create a new string variable to set equal to after the word is generated
   //create a loop so we can loop the number of (arg) times
-    //use a function 'MathRandom'in Javascript to generate a random number value
-	//use a function 'toString' to convert that random number to a string
-	//use a function to replace each generated integer character with a letter in the alphabet in the string '.replace'
-	//use a function that can return length of string up to 10 characters
-  //push value to an array each time
+    //create a new alphabet so we can randomize the alphabet
+    //nested for loop 
+      //append a new alphabet string each time with new random generated letter
+    //  
   //add driver code
     //create loop to loop 10 times
 	  //set new array variable equal return function value
@@ -97,16 +96,18 @@ function find_match(obj_1,obj_2) {
 	
 function random_arr(int) {
   var ran_arr = [];
-  var text = "";
+  var alpha = "abcdefghijklmnopqrstuvwxyz"
+  var text
   for(var i=0; i < int; i++) {
-    text = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(12);
+	var new_alpha
+	for (var n=0; n < 25; n++) {
+	  new_alpha += alpha.charAt(Math.floor(Math.random() * 25));
+	}
+	text = new_alpha.substr(Math.floor(Math.random() * 25), (Math.floor(Math.random() * 10)));
     ran_arr.push(text);
   }
   return ran_arr;
 }
-
- //This repl seems to work: https://repl.it/Dc4L/2
- //However, issues with same results in node
 
 
 //calling release 0
@@ -117,10 +118,12 @@ console.log(longest_string(word_arr))
   console.log(find_match(pairs_1,pairs_2))
   //returns false
   console.log(find_match(pairs_1,pairs_3))
+
+  console.log(random_arr(4))
   
 //calling release 2
-  for (i = 0; i < 10; i++) { 
-    var new_arr = random_arr(3);
-    console.log(new_arr);
-    console.log(longest_string(new_arr));
- }
+  //for (i = 0; i < 10; i++) { 
+    //var new_arr = random_arr(3);
+    //console.log(new_arr);
+    //console.log(longest_string(new_arr));
+// }
