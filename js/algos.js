@@ -74,8 +74,6 @@ function find_match(obj_1,obj_2) {
   }
 }
 
-
-
 //release 2
   //Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
   //create a function that takes an integer for an argument
@@ -101,9 +99,9 @@ function random_arr(int) {
   for(var i=0; i < int; i++) {
 	var new_alpha
 	for (var n=0; n < 25; n++) {
-	  new_alpha += alpha.charAt(Math.floor(Math.random() * 25));
+	  new_alpha += alpha.charAt(Math.floor(Math.random() * 25) + 1);
 	}
-	text = new_alpha.substr(Math.floor(Math.random() * 25), (Math.floor(Math.random() * 10)));
+	text = new_alpha.substr((Math.floor(Math.random() * 25) + 1), (Math.floor(Math.random() * 10) + 1));
     ran_arr.push(text);
   }
   return ran_arr;
@@ -111,19 +109,17 @@ function random_arr(int) {
 
 
 //calling release 0
-console.log(longest_string(word_arr))
+console.log(longest_string(word_arr));
 
 //calling release 1
   //returns true
-  console.log(find_match(pairs_1,pairs_2))
+  console.log(find_match(pairs_1,pairs_2));
   //returns false
-  console.log(find_match(pairs_1,pairs_3))
-
-  console.log(random_arr(4))
+  console.log(find_match(pairs_1,pairs_3));
   
 //calling release 2
-  //for (i = 0; i < 10; i++) { 
-    //var new_arr = random_arr(3);
-    //console.log(new_arr);
-    //console.log(longest_string(new_arr));
-// }
+  for (i = 0; i < 10; i++) { 
+    var new_arr = random_arr(5);
+    console.log(new_arr);
+    console.log(longest_string(new_arr));
+  }
