@@ -1,3 +1,4 @@
+//revise for Chipmunks 2016
 //release0
   //Write a function that takes an array of words or phrases and returns the longest word or phrase in the array
 
@@ -44,6 +45,21 @@ var pairs_1 = {name: "Steven", age: 54}
 var pairs_2 = {name: "Tamir", age: 54}
 var pairs_3 = {name: "Alex", age: 55}
 
+//Updated version - not sure if this is the more efficient way using two for loops
+
+function find_match(obj_1,obj_2) {
+  for (var key in obj_1) {
+      if (obj_1[key] === obj_2[key]) {
+        return true;
+      }
+  }
+  for (var key in obj_1) {
+      if (obj_1[key] != obj_2[key]) {
+        return false;
+      }
+  }
+}
+
 //Original prior to talking to Glenna
 /*function find_match(obj_1,obj_2) {
   for (var key in obj_1) {
@@ -58,21 +74,6 @@ var pairs_3 = {name: "Alex", age: 55}
 	}
   }
 }*/
-
-//Updated version - not sure if this is the more efficient way using two for loops
-
-function find_match(obj_1,obj_2) {
-  for (var key in obj_1) {
-      if (obj_1[key] == obj_2[key]) {
-        return true;
-      }
-  }
-  for (var key in obj_1) {
-      if (obj_1[key] != obj_2[key]) {
-        return false;
-      }
-  }
-}
 
 //release 2
   //Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
@@ -119,7 +120,7 @@ console.log(longest_string(word_arr));
   
 //calling release 2
   for (i = 0; i < 10; i++) { 
-    var new_arr = random_arr(5);
+    var new_arr = random_arr(5); //used 5 as the int argument in this example.
     console.log(new_arr);
     console.log(longest_string(new_arr));
   }
