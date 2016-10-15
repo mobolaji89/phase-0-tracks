@@ -1,0 +1,19 @@
+1. Display the information in one table (either table is fine).
+
+  SELECT * FROM video_games;
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+  UPDATE video_games SET genre='RPG' WHERE game LIKE "%Zelda%";
+
+3. Display the information in both tables using one query.
+
+  SELECT * FROM systems, video_games WHERE video_games.system_id = systems.id;
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+  SELECT systems.system, video_games.game, video_games.date, video_games.genre FROM systems JOIN video_games ON video_games.system_id = systems.id;
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+  DELETE FROM video_games WHERE game="Pro Evolution Soccer 2017";
