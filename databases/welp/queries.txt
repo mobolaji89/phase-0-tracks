@@ -1,0 +1,41 @@
+1) Input - SELECT * FROM users, reviews, businesses  WHERE reviews.users_id = users.id AND reviews.businesses_id = businesses.id;
+
+   
+
+  Output: 
+
+	2|Bob|Dylan|1|4|Great pasta!|3|2|3|The Beagle Night Club
+			
+	3|Johnny|Depp|2|5|Good rocky mountain oysters!|4|3|4|Lotus Yoga
+			
+	9|Hillary|Clinton|3|2|Solid hot dog!|7|9|7|JoeBob's Sportz Barn
+			
+	6|Marshall|Mathers|4|5|Great spaghetti!|2|6|2|Grundy Hollow Wedding Chapel
+
+
+
+2) Input - SELECT users.first, users.last, businesses.name, reviews.stars, reviews.comments FROM users, businesses JOIN reviews ON 
+		   reviews.businesses_id = businesses.id AND reviews.users_id = users.id;
+   
+   
+
+  Output:
+ 
+	Bob|Dylan|The Beagle Night Club|4|Great pasta!
+			
+	Johnny|Depp|Lotus Yoga|5|Good rocky mountain oysters!
+			
+	Hillary|Clinton|JoeBob's Sportz Barn|2|Solid hot dog!
+			
+	Marshall|Mathers|Grundy Hollow Wedding Chapel|5|Great spaghetti!
+
+
+
+3) Input - SELECT users.first, users.last, businesses.name, reviews.stars, reviews.comments FROM users, businesses JOIN reviews ON 
+ 		   reviews.businesses_id = businesses.id AND reviews.users_id = users.id WHERE businesses.name = "Lotus Yoga";
+
+   
+
+  Output:
+
+	Johnny|Depp|Lotus Yoga|5|Good rocky mountain oyst
