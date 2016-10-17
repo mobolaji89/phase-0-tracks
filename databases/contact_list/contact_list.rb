@@ -42,10 +42,44 @@ contact_list = db.execute("SELECT * FROM contacts")
 #p contact_list
 
 #print data
-puts "Here are your current contacts:"
-contact_list.each do |contact|
-  puts "name: #{contact[1]}, address: #{contact[2]}, phone number: #{contact[3]}"
+def print_data(list)
+  puts "Here are your current contacts:"
+  list.each do |contact|
+    puts "name: #{contact[1]}, address: #{contact[2]}, phone number: #{contact[3]}"
+  end
 end
 
-#If I had more time I could formulate methods to update or delate certain contacts within the database. But I understand the basics of ORM.
+print_data(contact_list)
+
+#Incorporate update and delete actions for contact list. I probably could have used a case statement to make it more streamlined, but due to time, I kept it straight-forward.
+
+puts "Would you like to delete or update a contact? type: 'update' or 'delete'"
+request = gets.chomp
+if request.downcase == 'update'
+  puts "What is the name of the contact you would like to update"
+  contact_name = gets.chomp
+  puts "Which category would you like to update? type 'name', 'address', or 'phone number'."
+  categ = gets.chomp.downcase
+  if categ == 'name'
+    puts "What would you like to change there name to?"
+    update_name = gets.chomp    
+    db.execute("UPDATE contacts SET name='#{update_name}' WHERE name='#{contact_name}'")
+  elsif categ == 'address'
+    puts "What would you like to change their address to?"
+    update_address = gets.chomp    
+    db.execute("UPDATE contacts SET address='#{update_address}' WHERE name='#{contact_name}'")
+  elsif categ == 'phone number'
+    puts "What would you like to change there phone number to?"
+    update_number = gets.chomp    
+    db.execute("UPDATE contacts SET phone_number='#{update_number}' WHERE name='#{contact_name}'")
+  end
+  updated_list = db.execute("SELECT * FROM contacts")
+  print_data(updated_list)
+elsif request.downcase == 'delete'
+  puts "What is the name of the contact you would like to delete"
+  contact_name = gets.chomp
+  db.execute("DELETE FROM contacts WHERE name='#{contact_name}'")
+  updated_list = db.execute("SELECT * FROM contacts")
+  print_data(updated_list)
+end
   
