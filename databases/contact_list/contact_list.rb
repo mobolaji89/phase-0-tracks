@@ -10,7 +10,7 @@ create_table_cmd = <<-SQL
   id INTEGER PRIMARY KEY,
   name VARCHAR(255),
   address VARCHAR(255),
-  phone_number INT
+  phone_number VARCHAR(255)
   )
 SQL
 
@@ -30,8 +30,22 @@ num.times do
   puts "What is the address of #{fake_name}?"
   address = gets.chomp
   puts "What is the phone number of #{fake_name}?"
-  phone_number = rand(1000000000..9999999999)
+  phone_number = rand(1000000000..9999999999).to_s
   puts phone_number
   create_contacts(db, fake_name, address, phone_number)
 end
+
+#I could have added seperate columns for city, state, and zip code specifically, but for the sake of time the address is the whole string.
+
+#explore ORM
+contact_list = db.execute("SELECT * FROM contacts")
+#p contact_list
+
+#print data
+puts "Here are your current contacts:"
+contact_list.each do |contact|
+  puts "name: #{contact[1]}, address: #{contact[2]}, phone number: #{contact[3]}"
+end
+
+#If I had more time I could formulate methods to update or delate certain contacts within the database. But I understand the basics of ORM.
   
